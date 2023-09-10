@@ -1,29 +1,36 @@
-import { TYPES_SUPPORT_BOOKS } from "../config"
-
+import { TYPES_SUPPORT_BOOKS } from '../config'
 
 const libros = [
-    {
-        title:'Libro 1',
-        author:'',
-        supportType: {
-            [TYPES_SUPPORT_BOOKS.SUPPORT_PDF_TYPE] : false,
-            [TYPES_SUPPORT_BOOKS.SUPPORT_VIDEO_TYPE] : false,
-            [TYPES_SUPPORT_BOOKS.SUPPORT_WEB_TYPE] : false,
-        },
-        links: {
-            pdf:{
+  {
+    title: '',
+    APA: '',
+    ISBN: '123123124',
+    author: 'Swokowski',
+    editorial: '',
+    exist: true,
+    location: '',
+    observations: '',
+    originallyPublised: '',
+    pdfRecurso: [
+      'https://hola.com/archivo.pdf'
+    ],
+    resources: {
+      PDF: true,
+      VIDEO: false,
+      WEB: false
+    },
+    subjects: [
 
-            },
-            video:{
+    ],
+    careers: [
 
-            },
-            web : {
+    ],
+    curriculum: [
 
-            }
-        },
-        description: '',
-        careers:[],
-        subject:[],
-        thematic:[]
-    }
+    ],
+    keywords: [
+
+    ],
+    year: 2011
+  }
 ]
