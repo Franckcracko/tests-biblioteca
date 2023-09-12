@@ -3,7 +3,7 @@ import { StructureBase } from './StructureBase'
 export function Home () {
   return (
     <StructureBase>
-      <h1>Hello World</h1>
+      <h1>Home</h1>
     </StructureBase>
   )
 }

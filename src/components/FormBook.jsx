@@ -21,7 +21,7 @@ export function FormBook () {
   const [careerValue, setCareerValue] = useState(initialValue)
   const [curriculumValue, setCurriculumValue] = useState(initialValue)
   const [resources, setResources] = useState(initialResources)
-  const [listKeywords, setListKeywords] = useState(keywords)
+  const listKeywords = keywords.sort()
   const {
     register,
     handleSubmit,
@@ -71,12 +71,11 @@ export function FormBook () {
 
   useEffect(() => {
     getData()
-    setListKeywords(prevState => prevState.sort())
   }, [])
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className='grid gap-y-6 w-full md:px-24 lg:px-36 mx-auto '
+      className='grid gap-y-6 flex-1 '
     >
       <article>
         {
