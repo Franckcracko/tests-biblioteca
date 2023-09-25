@@ -1,10 +1,9 @@
-import { StructureBase } from './StructureBase'
-import { FormBook } from './formBook'
+import React, { useRef, useState } from 'react'
+import { loadExcelBooks } from '../api/books'
 import { Button, Input, Link } from '@nextui-org/react'
-import { useRef } from 'react'
-
-export function Dashboard () {
+export default function AddDashboard () {
   const inputFile = useRef(null)
+  const [loadingUpload, setLoadingUpload] = useState(null)
 
   const handleFileChange = (event) => {
     const file = event.target.files[0]
@@ -15,22 +14,20 @@ export function Dashboard () {
     const formData = new FormData()
     formData.append('file', selectedFile)
     try {
-      const res = await fetch('http://localhost:3000/api', {
-        method: 'POST',
-        body: formData
-      })
-      console.log(await res.json())
+      setLoadingUpload(false)
+      console.log(await loadExcelBooks(formData))
+      setLoadingUpload(true)
     } catch (error) {
       console.log('Error al subir el archivo')
+      console.log(error.response.data)
     }
   }
-
   return (
-    <StructureBase>
-      <h1 className='text-6xl text-primary font-medium py-6'>Dashboard</h1>
-      <article>
+
+    <>
+      <section>
         <h2 className='mb-2 text-3xl'>Subir Libros atraves de Excel</h2>
-        <span className='mr-4'><Link color='primary' href="#" target='_blank'>Descarga la Plantilla de Excel </Link> o</span>
+        <span className='mr-4'><Link color='primary' href="/PlantillaBase.xlsm" download target='_blank'>Descarga la Plantilla de Excel </Link> o</span>
         <Input className='hidden' ref={inputFile} type="file" onChange={handleFileChange} />
         <Button
           className='text-white'
@@ -43,13 +40,23 @@ export function Dashboard () {
           onClick={() => {
             inputFile.current.click()
           }}
-        >Subir Excel</Button>
+        >Subir Excel
+
+        </Button>
+        {
+          loadingUpload !== null && !loadingUpload
+            ? <p>Subiendo...</p>
+            : loadingUpload && <p>Cargado con éxito</p>
+        }
         <h2 className='text-3xl py-3'>Agregar Libros</h2>
         <p className='mb-2'>En el siguiente formulario podrás agregar libros, solo tienes que rellenar todos los datos solicitados.</p>
-        <section className='w-full md:px-24 lg:px-36 mx-auto flex gap-y-4 flex-col '>
-          <FormBook />
-        </section>
-      </article>
-    </StructureBase>
+        <div className='w-full md:px-24 lg:px-36 mx-auto flex gap-y-4 flex-col '>
+          {/* <FormBook /> */}
+        </div>
+      </section>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+      </svg>
+    </>
   )
 }
