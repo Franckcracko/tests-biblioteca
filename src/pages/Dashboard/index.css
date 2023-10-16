@@ -1,0 +1,9 @@
+#home {
+  display: grid;
+  grid-template-areas:
+    "welcome welcome suggest"
+    "table table table"
+    "requests requests requests";
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 1fr auto;
+}

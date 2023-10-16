@@ -1,4 +1,3 @@
-import React from 'react'
 export const BarMenuIcon = ({ strokeColor = 'hsl(0, 0%, 18%)' }) => {
   return (
     <svg width="23" height="23" viewBox="0 0 23 23"><path fill="transparent" strokeWidth="3" stroke={strokeColor} strokeLinecap="round" d="M 2 2.5 L 20 2.5"></path><path fill="transparent" strokeWidth="3" stroke={strokeColor} strokeLinecap="round" d="M 2 9.423 L 20 9.423" opacity="1"></path><path fill="transparent" strokeWidth="3" stroke={strokeColor} strokeLinecap="round" d="M 2 16.346 L 20 16.346"></path></svg>
@@ -9,6 +8,7 @@ export const CloseMenuIcon = ({ strokeColor = 'hsl(0, 0%, 18%)' }) => {
     <svg width="23" height="23" viewBox="0 0 23 23"><path fill="transparent" strokeWidth="3" stroke={strokeColor} strokeLinecap="round" d="M 3 16.5 L 17 2.5"></path><path fill="transparent" strokeWidth="3" stroke={strokeColor} strokeLinecap="round" d="M 2 9.423 L 20 9.423" opacity="0"></path><path fill="transparent" strokeWidth="3" stroke={strokeColor} strokeLinecap="round" d="M 3 2.5 L 17 16.346"></path></svg>
   )
 }
+
 export const SearchIcon = (props) => (
   <svg
     aria-hidden="true"
@@ -70,15 +70,15 @@ export const FavoriteIcon = ({ width = 24, height = 24, className }) => (
   </svg>
 )
 
-export const DeleteIcon = (props) => (
+export const DeleteIcon = ({ size = 24, width, height, ...props }) => (
   <svg
     aria-hidden="true"
     fill="none"
     focusable="false"
-    height="1em"
-    role="presentation"
-    viewBox="0 0 20 20"
-    width="1em"
+    height={size || height}
+    role="delete"
+    viewBox="0 0 24 24"
+    width={size || width}
     {...props}
   >
     <path
@@ -136,6 +136,7 @@ export const VerticalDotsIcon = ({ size = 24, width, height, ...props }) => (
     />
   </svg>
 )
+
 export const FilterIcon = ({ size = 24, width, height, ...props }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -210,5 +211,61 @@ export const PdfIcon = ({ size = 24, width, height, ...props }) => (
     {...props}
   >
     <path d="M2.5 6.5V6H2v.5h.5Zm4 0V6H6v.5h.5Zm0 4H6v.5h.5v-.5Zm7-7h.5v-.207l-.146-.147l-.354.354Zm-3-3l.354-.354L10.707 0H10.5v.5ZM2.5 7h1V6h-1v1Zm.5 4V8.5H2V11h1Zm0-2.5v-2H2v2h1Zm.5-.5h-1v1h1V8Zm.5-.5a.5.5 0 0 1-.5.5v1A1.5 1.5 0 0 0 5 7.5H4ZM3.5 7a.5.5 0 0 1 .5.5h1A1.5 1.5 0 0 0 3.5 6v1ZM6 6.5v4h1v-4H6Zm.5 4.5h1v-1h-1v1ZM9 9.5v-2H8v2h1ZM7.5 6h-1v1h1V6ZM9 7.5A1.5 1.5 0 0 0 7.5 6v1a.5.5 0 0 1 .5.5h1ZM7.5 11A1.5 1.5 0 0 0 9 9.5H8a.5.5 0 0 1-.5.5v1ZM10 6v5h1V6h-1Zm.5 1H13V6h-2.5v1Zm0 2H12V8h-1.5v1ZM2 5V1.5H1V5h1Zm11-1.5V5h1V3.5h-1ZM2.5 1h8V0h-8v1Zm7.646-.146l3 3l.708-.708l-3-3l-.708.708ZM2 1.5a.5.5 0 0 1 .5-.5V0A1.5 1.5 0 0 0 1 1.5h1ZM1 12v1.5h1V12H1Zm1.5 3h10v-1h-10v1ZM14 13.5V12h-1v1.5h1ZM12.5 15a1.5 1.5 0 0 0 1.5-1.5h-1a.5.5 0 0 1-.5.5v1ZM1 13.5A1.5 1.5 0 0 0 2.5 15v-1a.5.5 0 0 1-.5-.5H1Z" />
+  </svg>
+)
+
+export const DocIcon = ({ size = 24, width, height, ...props }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    height={size || height}
+    role="video icon"
+    width={size || width}
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path d="M21 5c0-1.103-.897-2-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5zM5 19V5h14l.002 14H5z"></path><path d="M7 7h1.998v2H7zm4 0h6v2h-6zm-4 4h1.998v2H7zm4 0h6v2h-6zm-4 4h1.998v2H7zm4 0h6v2h-6z"></path>
+  </svg>
+)
+export const DetailsIcon = ({ size = 24, width, height, ...props }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    height={size || height}
+    role="video icon"
+    width={size || width}
+    viewBox="0 0 24 24"
+    strokeWidth="1.5"
+    stroke="#2c3e50"
+    fill="none"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M13 5h8" />
+    <path d="M13 9h5" />
+    <path d="M13 15h8" />
+    <path d="M13 19h5" />
+    <path d="M3 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+    <path d="M3 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+  </svg>
+)
+
+export const SuccessIcons = ({ size = 24, width, height, ...props }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    height={size || height}
+    role="check icons"
+    width={size || width}
+    viewBox="0 0 24 24"
+    strokeWidth="1.5"
+    stroke="green"
+    fill="none"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+    <path d="M9 12l2 2l4 -4" />
   </svg>
 )

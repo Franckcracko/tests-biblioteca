@@ -1,4 +1,4 @@
-import { Accordion, AccordionItem, User } from '@nextui-org/react'
+import { Accordion, AccordionItem, Button, User } from '@nextui-org/react'
 import { StructureBase } from '../components/StructureBase'
 import { useAuth } from '../hooks/useAuth'
 import { FavoriteIcon, PreferencesIcon } from '../components/Icons'
@@ -8,7 +8,7 @@ import { getFavoriteBooks } from '../api/user'
 import { Link } from 'react-router-dom'
 
 export default function Profile () {
-  const { user } = useAuth()
+  const { user, logout } = useAuth()
   const [favoriteBooks, setFavoriteBooks] = useState([])
   const itemClasses = {
     base: 'py-0 w-full',
@@ -79,6 +79,12 @@ export default function Profile () {
               </AccordionItem>
             </Accordion>
           </section>
+          <Button
+            onClick={logout}
+            color='danger'
+          >
+            Cerrar Sesion
+          </Button>
         </div>
       </article>
     </StructureBase>

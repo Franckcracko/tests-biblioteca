@@ -4,7 +4,15 @@ export const TYPES_SUPPORT_BOOKS = {
   SUPPORT_WEB_TYPE: 'support_web'
 }
 
-export const API_URL = import.meta.env.VITE_API_URL || 'http://172.16.1.46:3004'
+export const TYPES_CAREERS = {
+  ITI: 'INGENIERIA EN TECNOLOGIAS DE LA INFORMACION',
+  IE: 'INGENIERIA EN ENERGIA',
+  IET: 'INGENIERIA EN ELECTRONICA Y TELECOMUNICACIONES',
+  II: 'INGENIERIA INDUSTRIAL'
+}
+
+// 'http://172.16.1.46:3004/' 'http://192.168.0.10:3004/'
+export const API_URL = import.meta.env.VITE_API_URL || 'http://192.168.0.7:3004/'
 
 export const subjectsArray = [
   'MATEMÁTICAS DISCRETAS',
@@ -55,3 +63,18 @@ export const subjectsArray = [
   'COMUNICACIÓN ORAL Y ESCRITA II',
   'ENERGÍAS 1'
 ]
+
+export const keywordPages = {
+  HOME_PAGE: {
+    name: 'Inicio',
+    path: 'home'
+  },
+  ADD_PAGE: {
+    name: 'Agregar',
+    path: 'add'
+  },
+  REGISTERS_PAGE: {
+    name: 'Registro de Maestros',
+    path: 'registers'
+  }
+}

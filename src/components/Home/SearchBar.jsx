@@ -1,14 +1,21 @@
-import React, { useEffect, useState } from 'react'
-import { SearchIcon } from './Icons'
+import { useEffect, useState } from 'react'
+import { SearchIcon } from '../Icons'
 import { Input } from '@nextui-org/react'
+import { useFilter } from '../../hooks/useFilter'
 
-export default function SearchBar ({ getB, setFilters }) {
+const search = 'title'
+export default function SearchBar () {
   const [value, setValue] = useState('')
+  const [active, setActive] = useState(false)
+  const { updateParams, removeParams } = useFilter()
+
   useEffect(() => {
-    setFilters(prevState => ({
-      ...prevState,
-      title: value
-    }))
+    if (!active) { return }
+
+    if (value === '') {
+      return removeParams([search])
+    }
+    updateParams({ value, index: search })
   }, [value])
 
   return (
@@ -21,19 +28,13 @@ export default function SearchBar ({ getB, setFilters }) {
       className='text-primary'
       placeholder="Busca tu Libro..."
       onKeyDown={(e) => {
-        if (e.key === 'Enter') {
-          setFilters(prevState => ({
-            ...prevState,
-            title: value
-          }))
-        }
+        setActive(true)
       }}
       startContent={
         <button onClick={async () => {
-          setFilters(prevState => ({
-            ...prevState,
-            title: value
-          }))
+          if (value !== '') {
+            updateParams({ value, index: search })
+          }
         }}>
           <SearchIcon className="text-black/50 dark:text-white/90 text-slate-400 pointer-events-none flex-shrink-0" />
         </button>
