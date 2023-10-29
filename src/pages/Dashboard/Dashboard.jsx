@@ -1,12 +1,9 @@
 import { useState } from 'react'
-
 import { keywordPages } from '../../config'
-
-import AddDashboard from './Add'
-import HomeDashboard from './Home'
-import RegistersDashboard from './Registers'
-
-import { AsideBar } from '../../components/Dashboard/AsideBar'
+import AddDashboard from './Add/Add'
+import HomeDashboard from './Home/Home'
+import RegistersDashboard from './Register/Registers'
+import { AsideBar } from './AsideBar/AsideBar'
 
 export const Dashboard = () => {
   const [route, setRoute] = useState(keywordPages.HOME_PAGE.path)

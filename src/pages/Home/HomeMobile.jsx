@@ -3,7 +3,7 @@ import { useFilter } from '../../hooks/useFilter'
 import BookItem from './BookItem'
 import { Link } from 'react-router-dom'
 
-export default function HomePageWithFilters () {
+export default function HomeMobile () {
   const { books, updateParams } = useFilter()
   const totalPages = books.totalPages ?? 0
   const currentPage = books.page ?? 0

@@ -1,5 +1,5 @@
-import { DownloadIcon, FavoriteIcon, PreviewIcon, VideoIcon, WorldIcon } from './Icons'
-import { removeBookUser, saveBookUser } from '../api/user'
+import { DownloadIcon, FavoriteIcon, PreviewIcon, VideoIcon, WorldIcon } from '../../components/Icons'
+import { removeBookUser, saveBookUser } from '../../api/user'
 
 export default function LinksBook ({ book, saveBook, setSaveBook, url }) {
   const sizeIcon = 36

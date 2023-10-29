@@ -1,5 +1,5 @@
 import { Button, Chip, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/react'
-import { VerticalDotsIcon } from '../Icons'
+import { VerticalDotsIcon } from '../../../components/Icons'
 
 const TYPES_STATUS_SUGGEST = {
   PENDING: 'PENDIENTE',
@@ -7,7 +7,7 @@ const TYPES_STATUS_SUGGEST = {
   DECLINE: 'RECHAZADO'
 }
 
-export const TableHome = ({ suggests }) => {
+export const TableSuggests = ({ suggests }) => {
   console.log(suggests)
   return (
     <Table aria-label="tabla de sugerencias">

@@ -1,9 +1,9 @@
-import { useAuth } from '../../hooks/useAuth'
+import { useAuth } from '../../../hooks/useAuth'
 import { Button } from '@nextui-org/react'
-import { TableHome } from '../../components/Dashboard/TableHome'
-import { keywordPages } from '../../config'
+import { TableSuggests } from './TableSuggests'
+import { keywordPages } from '../../../config'
 import { useEffect, useState } from 'react'
-import { getSuggests } from '../../api/suggests'
+import { getSuggests } from '../../../api/suggests'
 
 const TYPES_STATUS_SUGGEST = {
   PENDING: 'PENDIENTE',
@@ -46,7 +46,7 @@ export default function Home ({ setRoute }) {
 
       <section className="[grid-area:table]">
         <h2 className='text-xl font-medium pb-2'>Tabla de Sugerencias</h2>
-        <TableHome suggests={suggests} />
+        <TableSuggests suggests={suggests} />
       </section>
 
       <section className="[grid-area:requests]">

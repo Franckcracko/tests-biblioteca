@@ -1,7 +1,7 @@
 import { Button, Input } from '@nextui-org/react'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
-import { useAuth } from '../hooks/useAuth'
+import { useAuth } from '../../hooks/useAuth'
 
 export default function EspecialRegister () {
   const { sendEspecialAuthRequest } = useAuth()

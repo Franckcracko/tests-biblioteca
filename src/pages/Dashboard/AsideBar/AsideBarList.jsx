@@ -1,4 +1,4 @@
-import { keywordPages } from '../../config'
+import { keywordPages } from '../../../config'
 import { AsideBarItem } from './AsideBarItem'
 
 const keys = Object.keys(keywordPages)

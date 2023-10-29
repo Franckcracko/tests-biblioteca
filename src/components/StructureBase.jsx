@@ -1,4 +1,4 @@
-import { NavBar } from './NavBar'
+import { NavBar } from './Navbar/Navbar'
 
 export function StructureBase ({ children }) {
   return (

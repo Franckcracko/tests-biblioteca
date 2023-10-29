@@ -1,7 +1,6 @@
-/* eslint-disable no-unused-vars */
 import { Button, TableCell } from '@nextui-org/react'
-import { DeleteIcon, DetailsIcon, SuccessIcons } from '../Icons'
-import { acceptRegister, declineRegister } from '../../api/admin'
+import { DeleteIcon, DetailsIcon, SuccessIcons } from '../../../components/Icons'
+import { acceptRegister, declineRegister } from '../../../api/admin'
 
 export const TableRowRegisters = ({ id, name, email, class: cargo }) => {
   const deleteRequest = async (id) => {

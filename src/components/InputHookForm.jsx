@@ -1,6 +1,6 @@
 import { Input } from '@nextui-org/react'
 
-export const InputCustom = ({
+export const InputHookForm = ({
   register,
   label,
   isRequired,

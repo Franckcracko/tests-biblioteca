@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react'
-import { Link, Navigate, useParams } from 'react-router-dom'
-import { downloadPDF, existBook, getBook } from '../api/books'
-import { StructureBase } from '../components/StructureBase'
-import { useAuth } from '../hooks/useAuth'
-import Loading from '../components/Loading'
-import LinksBook from '../components/LinksBook'
-import InformationBook from '../components/InformationBook'
-import { Button } from '@nextui-org/react'
+import { Navigate, useParams } from 'react-router-dom'
+import { downloadPDF, existBook, getBook } from '../../api/books'
+import { StructureBase } from '../../components/StructureBase'
+import { useAuth } from '../../hooks/useAuth'
+import Loading from '../../components/Loading'
+import { Book } from './Book'
 
-export default function Book () {
+export default function BookPage () {
   const { user } = useAuth()
   const { id } = useParams()
 
@@ -58,26 +56,13 @@ export default function Book () {
       <StructureBase>
         {
           book !== null
-            ? (
-              <article >
-                {
-                  user.rol === 'ADMIN' &&
-                  <Link className='absolute bottom-5 right-8'>
-                    <Button color='danger' variant='shadow'>
-                      Editar Libro (SOLO ADMIN)
-                    </Button>
-                  </Link>
-                }
-                <InformationBook {...book} />
-                <LinksBook
-                  book={book}
-                  saveBook={saveBook}
-                  setSaveBook={setSaveBook}
-                  url={url}
-                />
-
-              </article>
-              )
+            ? <Book
+              book={book}
+              rol={user.rol}
+              saveBook={saveBook}
+              setSaveBook={setSaveBook}
+              url={url}
+            />
             : <Loading />
         }
 

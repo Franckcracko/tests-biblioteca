@@ -1,4 +1,4 @@
-import { TableRegisters } from '../../components/Dashboard/TableRegisters'
+import { TableRegisters } from './TableRegisters'
 
 export default function Registers () {
   return (

@@ -1,7 +1,7 @@
-import { Button, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/react'
 import { useEffect, useState } from 'react'
-import { DeleteIcon, DetailsIcon, SuccessIcons } from '../Icons'
-import { acceptRegister, declineRegister, getRegisters } from '../../api/admin'
+import { Button, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/react'
+import { DeleteIcon, DetailsIcon, SuccessIcons } from '../../../components/Icons'
+import { acceptRegister, declineRegister, getRegisters } from '../../../api/admin'
 
 export const TableRegisters = () => {
   const [registers, setRegisters] = useState([])

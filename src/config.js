@@ -12,7 +12,7 @@ export const TYPES_CAREERS = {
 }
 
 // 'http://172.16.1.46:3004/' 'http://192.168.0.10:3004/'
-export const API_URL = import.meta.env.VITE_API_URL || 'http://192.168.0.7:3004/'
+export const API_URL = import.meta.env.VITE_API_URL || 'http://192.168.0.4:3004/'
 
 export const subjectsArray = [
   'MATEMÁTICAS DISCRETAS',

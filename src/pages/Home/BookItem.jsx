@@ -1,7 +1,7 @@
-import { Button, useDisclosure } from '@nextui-org/react'
 import { Link } from 'react-router-dom'
-import ModalBook from '../ModalBook'
-import { PdfIcon, VideoIcon, WorldIcon } from '../Icons'
+import { Button, useDisclosure } from '@nextui-org/react'
+import { PdfIcon, VideoIcon, WorldIcon } from '../../components/Icons'
+import ModalBook from './ModalBook'
 
 export default function BookItem ({
   image,

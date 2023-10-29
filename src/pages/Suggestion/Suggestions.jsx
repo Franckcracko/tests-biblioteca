@@ -1,5 +1,5 @@
 import { Button, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, getKeyValue } from '@nextui-org/react'
-import { StructureBase } from '../components/StructureBase'
+import { StructureBase } from '../../components/StructureBase'
 import { Link } from 'react-router-dom'
 
 export function Suggestions () {

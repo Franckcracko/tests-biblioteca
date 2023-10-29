@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { SearchIcon } from '../Icons'
+import { SearchIcon } from '../../components/Icons'
 import { Input } from '@nextui-org/react'
 import { useFilter } from '../../hooks/useFilter'
 
