@@ -22,7 +22,8 @@ export function NavBar () {
       title: 'dashboard', link: '/dashboard', private: true
     }
   ].filter(link => {
-    const userAutorizado = user.rol === 'ADMIN'
+    const userAutorizado = user.rol !== 'STUDENT'
+
     if (userAutorizado) {
       return link
     }

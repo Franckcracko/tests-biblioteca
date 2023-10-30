@@ -18,7 +18,7 @@ export default function ProtectedRoute () {
 
   if (!isAuthenticated && isLoading) return <Navigate to={'/auth'} replace />
 
-  if (routesAdmin.includes(location.pathname) && user.rol !== 'ADMIN') {
+  if (routesAdmin.includes(location.pathname) && user.rol === 'STUDENT') {
     return <Navigate to={'/404'} replace />
   }
   return (<Outlet />)

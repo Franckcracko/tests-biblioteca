@@ -6,7 +6,8 @@ export default function ModalBook ({
   title,
   _id,
   isOpen,
-  onOpenChange
+  onOpenChange,
+  description
 }) {
   return (
     <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
@@ -15,7 +16,7 @@ export default function ModalBook ({
           <>
             <ModalHeader className="flex flex-col gap-1">{title}</ModalHeader>
             <ModalBody>
-              Soy una descripcion de {title}
+              {description}
             </ModalBody>
             <ModalFooter>
               <Button color="primary" variant="light" onPress={onClose}>

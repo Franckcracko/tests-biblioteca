@@ -7,7 +7,8 @@ export default function BookItem ({
   image,
   title,
   _id,
-  resources
+  resources,
+  description
 }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
   return (
@@ -28,7 +29,7 @@ export default function BookItem ({
           Leer
         </Button>
       </Link>
-      <ModalBook title={title} _id={_id} isOpen={isOpen} onOpenChange={onOpenChange} />
+      <ModalBook description={description} title={title} _id={_id} isOpen={isOpen} onOpenChange={onOpenChange} />
     </section>
   )
 }

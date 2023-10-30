@@ -33,13 +33,8 @@ export function Suggestions () {
   ]
   return (
     <StructureBase >
-      <main className='grid place-content-center h-[calc(100vh-200px)]'>
-        {/* <h1 className='text-primary -rotate-45 text-5xl lg:text-9xl font-medium'>EN DESARROLLO</h1> */}
-        <h1>Sugerencias</h1>
-        <p>
-          En esta seccion podras hacer sugerencias, ya sea por alguna inconformidad sobre la plataforma o una sugerencia de algun libro que creas que sea de ayuda en un mejor repositorio de libros.
-        </p>
-        <Link to='/sugerencias/sugerencia'><Button color='primary'>Haz una sugerencia</Button></Link>
+      <main className='grid'>
+        <h1 className='text-3xl mb-4 font-medium text-primary'>Sugerencias</h1>
         <Table aria-label="Tabla De Sugerencias">
           <TableHeader columns={columns}>
             {(column) => <TableColumn className='text-black' key={column.key}>{column.label} </TableColumn>}
@@ -52,6 +47,9 @@ export function Suggestions () {
             )}
           </TableBody>
         </Table>
+        <div className='flex justify-center mt-4'>
+          <Link to='/sugerencias/sugerencia'><Button color='primary'>Haz una sugerencia</Button></Link>
+        </div>
       </main>
     </StructureBase>
   )
